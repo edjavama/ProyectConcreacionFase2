@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/footer.css') }}">
+    <title>Dashboard</title>
+</head>
+<body>
+     <!--Barra superior-->
+     <header class="top-bar">
+        <div class="centar-texto">
+            <!--<img src="imagenes/logo.png" alt="Biodiversidad">-->
+            <span>Dashboard de la Biodiversidad Cundiboyacense</span>
+        </div>
+    </header>
+
+    <!--Menu vertical-->
+    <nav class="vertical-menu">
+        <div class="logo">
+            <img src="{{ url_for('static', filename='imagenes/logo.png') }}" alt="Biodiversidad">
+        </div>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="mapas.html">Mapas</a></li>
+            <li><a href="boyaca.html">Boyaca</a></li>
+            <li><a href="cundinamarca.html">Cundinamarca</a></li>
+            <li><a href="dashboard.html">Dashboard</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <div class="dashboard">
+            <!-- Contenido principal -->
+            <div class="content-wrapper">
+                <!-- Barra superior -->
+                <!--Información de Boyaca-->
+                <header class="topbar">
+                    <div class="title-bar">
+                        <h1>Cifras de la Biodiversidad de Boyaca</h1>
+                    </div>
+                </header>
+    
+                <!-- Cards KPI -->
+                <!-- Sección de tarjetas Boyaca -->
+                <div id="cards-data-1" data-cards='{{ cards_1 | tojson }}'></div>
+                <section class="cards-overview" id="cards-container-1">
+                    <!-- Tarjetas de la primera sección -->
+                </section>
+                <div class="pagination">
+                    <button id="prev-page-1">Anterior</button>
+                    <span id="page-info-1"></span>
+                    <button id="next-page-1">Siguiente</button>
+                </div>
+
+                <!-- Área de gráficos Boyaca -->
+                <section class="charts">
+                    <div class="chart">
+                        <h3>Gráfico de Ventas</h3>
+                        <!-- Aquí podrías insertar un gráfico usando librerías como Chart.js -->
+                    </div>
+                    <div class="chart">
+                        <h3>Gráfico de Usuarios</h3>
+                        <!-- Aquí podrías insertar un gráfico usando librerías como Chart.js -->
+                    </div>
+                </section>
+
+                <!--Información de Cundinamarca-->
+                <header class="topbar">
+                    <div class="title-bar">
+                        <h1>Cifras de la Biodiversidad de Cundinamarca</h1>
+                    </div>
+                </header>
+
+                <!-- Sección de tarjetas Cundinamarca-->
+                <div id="cards-data-2" data-cards='{{ cards_2 | tojson }}'></div>
+                <section class="cards-overview" id="cards-container-2">
+                    <!-- Tarjetas de la segunda sección -->
+                </section>
+                <div class="pagination">
+                    <button id="prev-page-2">Anterior</button>
+                    <span id="page-info-2"></span>
+                    <button id="next-page-2">Siguiente</button>
+                </div>
+
+                <!-- Área de gráficos Cundinamarca -->
+                <section class="charts">
+                    <div class="chart">
+                        <h3>Gráfico de Ventas</h3>
+                        <!-- Aquí podrías insertar un gráfico usando librerías como Chart.js -->
+                    </div>
+                    <div class="chart">
+                        <h3>Gráfico de Usuarios</h3>
+                        <!-- Aquí podrías insertar un gráfico usando librerías como Chart.js -->
+                    </div>
+                </section>
+
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer-container">
+                <div class="footer-column">
+                    <p>Edgar Javier Vasquez Malavera - 2024 - Reserva todos los derechos</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Enlaces Rápidos</h3>
+                    <ul>
+                        <li><i class="bi bi-person-vcard"></i><a href="contacetnos.html"> Contactenos</a></li>
+                        <li><i class="bi bi-bell"></i><a href="suscribirse.html"> Suscribirse</a></li>
+                        <li><i class="bi bi-person-lines-fill"></i><a href="pqrs.html"> PQRS</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Instituciones</h3>
+                    <ul>
+                        <li><a href="https://www.usergioarboleda.edu.co/">Universidad Sergio Arboleda</a></li>
+                        <li><a href="https://www.corpoboyaca.gov.co/">Boyaca</a></li>
+                        <li><a href="https://www.car.gov.co/">Cundinamarca</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Ministerios</h3>
+                    <ul>
+                        <li><a href="https://www.mintic.gov.co/portal/inicio/">Ministerio de las TIC</a></li>
+                        <li><a href="https://www.minambiente.gov.co/">Ministerio de Ambiente y Desarrollo Sostenible</a></li>
+                    </ul>
+                    <!--<form action="#" method="post">
+                        <input type="email" placeholder="Tu email" required>
+                        <button type="submit">Suscribirse</button>
+                    </form>-->
+                </div>
+            </div>
+        </footer>
+
+        <script src="{{ url_for('static', filename='js/script_card.js') }}"></script>
+    </main>
+</body>
+</html>
